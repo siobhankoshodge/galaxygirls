@@ -265,10 +265,10 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(45deg, var(--green-dark) 25%, transparent 25%, transparent 75%, var(--green-dark) 75%, var(--green-dark)),
-                        linear-gradient(45deg, var(--green-dark) 25%, transparent 25%, transparent 75%, var(--green-dark) 75%, var(--green-dark));
-            background-size: 60px 60px;
-            background-position: 0 0, 30px 30px;
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
             background-color: var(--black);
             position: relative;
             overflow: hidden;
@@ -284,7 +284,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(15,82,15,0.45) 60%, rgba(0,0,0,0.55) 100%);
         }
 
         .hero-content {
