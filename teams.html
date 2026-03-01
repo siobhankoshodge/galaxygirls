@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teams - Linslade Galaxy Girls FC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables */
+    :root {
+      --green: #1a7a1a;
+      --green-dark: #0f520f;
+      --green-light: #2da02d;
+      --black: #111111;
+      --white: #fff;
+      --grey-light: #f0f0f0;
+      --grey-mid: #ccc;
+      --transition: all 0.3s ease;
+    }
+
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    h1 { font-size: 3rem; line-height: 1.2; }
+    h2 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--green-light);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(26, 122, 26, 0.2);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--grey-light);
+      color: var(--black);
+    }
+
+    .btn-secondary:hover {
+      background: var(--grey-mid);
+    }
+
+    /* Navbar */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-crest {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(26, 122, 26, 0.15);
+    }
+
+    .nav-title {
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .nav-title span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #666;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #555;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .nav-links a.active {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-login {
+      background: transparent;
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .btn-login:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .user-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.5rem 1rem;
+      background: var(--grey-light);
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .btn-logout {
+      background: var(--white);
+      border: 1px solid var(--grey-mid);
+      color: #666;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .btn-logout:hover {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--black);
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: var(--white);
+      border-top: 1px solid var(--grey-light);
+    }
+
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      padding: 1rem 2rem;
+    }
+
+    .mobile-menu li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .mobile-menu a {
+      color: #555;
+      font-weight: 500;
+      display: block;
+    }
+
+    .mobile-menu .btn-login {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 6px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(0, 0, 0, 0.05) 35px,
+        rgba(0, 0, 0, 0.05) 70px
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--white);
+      padding: 0.6rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 3.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      display: block;
+      color: #ffeb3b;
+    }
+
+    .hero-subtext {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    /* Section Container */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-heading h2 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-heading h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    /* Info Cards Section */
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--grey-light);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--green-light));
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(26, 122, 26, 0.15);
+      border-color: var(--green-light);
+    }
+
+    .info-card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-card h3 {
+      margin-bottom: 1rem;
+      color: var(--green);
+    }
+
+    .info-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Team Cards Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 1200px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--grey-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .team-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 40px rgba(26, 122, 26, 0.2);
+      border-color: var(--green-light);
+    }
+
+    .team-card-stripe {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--black));
+    }
+
+    .team-card-content {
+      padding: 2rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-badge {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 6px 16px rgba(26, 122, 26, 0.25);
+    }
+
+    .team-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-age {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .team-detail {
+      margin: 0.8rem 0;
+      font-size: 0.95rem;
+      color: #666;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .team-detail-label {
+      font-weight: 600;
+      color: var(--black);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+
+    .team-detail-value {
+      flex: 1;
+    }
+
+    .team-action {
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
+    .team-action .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Coaching Philosophy Section */
+    .philosophy {
+      background: var(--grey-light);
+      position: relative;
+    }
+
+    .philosophy-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .philosophy-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .philosophy-left {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .philosophy-left::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--green), var(--black));
+    }
+
+    .philosophy-quote {
+      font-size: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .philosophy-text p {
+      margin-bottom: 1.5rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .philosophy-right {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 6px solid var(--green);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 20px rgba(26, 122, 26, 0.15);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-desc {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* CTA Section - Two Columns */
+    .cta-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .cta-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta-card {
+      background: var(--white);
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--black));
+    }
+
+    .cta-card:hover {
+      box-shadow: 0 12px 32px rgba(26, 122, 26, 0.15);
+      transform: translateY(-6px);
+    }
+
+    .cta-card h3 {
+      color: var(--green);
+      margin-top: 1rem;
+    }
+
+    .cta-card p {
+      color: #666;
+      margin: 1.5rem 0;
+      line-height: 1.8;
+    }
+
+    .cta-card a {
+      display: inline-block;
+      font-weight: 600;
+      color: var(--green);
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--green);
+      transition: var(--transition);
+    }
+
+    .cta-card a:hover {
+      color: var(--green-light);
+      border-color: var(--green-light);
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: var(--white);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 35px,
+        rgba(0, 0, 0, 0.08) 35px,
+        rgba(0, 0, 0, 0.08) 70px
+      );
+      z-index: 1;
+    }
+
+    .cta-banner-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-banner h2 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+
+    .cta-banner p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-banner-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-banner-buttons .btn {
+      background: var(--white);
+      color: var(--green);
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+    }
+
+    .cta-banner-buttons .btn:hover {
+      background: #f5f5f5;
+      transform: translateY(-3px);
+    }
+
+    .cta-banner-buttons .btn-outline {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .cta-banner-buttons .btn-outline:hover {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    /* Footer */
+    .footer-stripe-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--black));
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 4rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand h3 {
+      color: var(--white);
+      margin: 1rem 0;
+      font-size: 1.3rem;
+    }
+
+    .footer-brand p {
+      color: #aaa;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col a {
+      color: #aaa;
+      transition: var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--green-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom p {
+      margin: 0.5rem 0;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--white);
+      border-radius: 12px;
+      max-width: 450px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-header-stripe {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--black));
+    }
+
+    .modal-header-content {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .modal-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--black);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .modal-title span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #666;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #999;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--black);
+    }
+
+    .modal-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .modal-tab {
+      flex: 1;
+      padding: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      color: #999;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+    }
+
+    .modal-tab.active {
+      color: var(--green);
+      border-bottom-color: var(--green);
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--black);
+      font-size: 0.95rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--grey-mid);
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(26, 122, 26, 0.1);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(26, 122, 26, 0.2);
+    }
+
+    .modal-footer-note {
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .modal-footer-note a {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--black);
+      color: var(--white);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      font-weight: 500;
+      z-index: 2000;
+      transform: translateY(150px);
+      transition: transform 0.3s ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 640px) {
+      .toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .hero {
+        padding: 4rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section {
+        padding: 3rem 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-inner {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+      }
+
+      .nav-title {
+        display: none;
+      }
+
+      .cta-banner h2 {
+        font-size: 1.8rem;
+      }
+
+      .team-badge {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+      }
+
+      .team-name {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <div class="nav-crest">⭐</div>
+        <div class="nav-title">Linslade Galaxy Girls FC<span>Bedfordshire Girls Football</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="teams.html" class="active">Teams</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions" id="navActions">
+        <button class="btn-login" onclick="openModal()">🔐 Member Login</button>
+      </div>
+      <div id="userBadge" class="user-badge" style="display:none;">
+        <div class="avatar" id="userAvatar">P</div>
+        <span id="userGreeting">Parent</span>
+        <button class="btn-logout" onclick="logout()">Sign out</button>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="teams.html" style="color:var(--green-light)">Teams</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn-login" onclick="openModal()">🔐 Member Login</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Our Squads</div>
+      <h1>Meet Our <em>Teams</em></h1>
+      <p class="hero-subtext">From our youngest beginners to our most experienced players, every girl has a team at Galaxy. We currently run 8 age-group teams across Bedfordshire.</p>
+    </div>
+  </section>
+
+  <!-- How Teams Work -->
+  <section class="section">
+    <div class="section-heading">
+      <h2>How Our Teams Work</h2>
+    </div>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-icon">📅</div>
+        <h3>Training</h3>
+        <p>We train weekly during the season. Check each team's page for specific days and times.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">⚽</div>
+        <h3>Fixtures</h3>
+        <p>Teams compete in local Beds & Herts leagues throughout the season (Sept–May).</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">👕</div>
+        <h3>Kit</h3>
+        <p>Club kit (shirt, shorts, socks) is available to purchase via the club. All in green and black.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Cards Grid -->
+  <section class="section" style="background: var(--grey-light); margin: 0; padding: 5rem 2rem;">
+    <div class="section-heading">
+      <h2>Our Teams 2025/26</h2>
+    </div>
+    <div class="team-grid">
+      <!-- Galaxy U7s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U7</div>
+          <div class="team-name">Galaxy U7s</div>
+          <div class="team-age">Ages 6–7</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Saturday 9:00am, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Mini Football (Fun only)</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U8s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U8</div>
+          <div class="team-name">Galaxy U8s</div>
+          <div class="team-age">Ages 7–8</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Saturday 9:30am, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Mini Football, Beds & Herts</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U9s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U9</div>
+          <div class="team-name">Galaxy U9s</div>
+          <div class="team-age">Ages 8–9</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Sunday 10:00am, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Beds & Herts Girls League</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U10s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U10</div>
+          <div class="team-name">Galaxy U10s</div>
+          <div class="team-age">Ages 9–10</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Sunday 10:30am, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Beds & Herts Girls League</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U11s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U11</div>
+          <div class="team-name">Galaxy U11s</div>
+          <div class="team-age">Ages 10–11</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Tuesday 6:00pm, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Beds & Herts Girls League</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U12s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U12</div>
+          <div class="team-name">Galaxy U12s</div>
+          <div class="team-age">Ages 11–12</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Wednesday 6:00pm, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Beds & Herts Girls League</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U14s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U14</div>
+          <div class="team-name">Galaxy U14s</div>
+          <div class="team-age">Ages 13–14</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Thursday 6:30pm, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Beds & Herts Girls League</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galaxy U16s -->
+      <div class="team-card">
+        <div class="team-card-stripe"></div>
+        <div class="team-card-content">
+          <div class="team-badge">U16</div>
+          <div class="team-name">Galaxy U16s</div>
+          <div class="team-age">Ages 15–16</div>
+          <div class="team-detail">
+            <span class="team-detail-label">Manager:</span>
+            <span class="team-detail-value">[Name TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">Training:</span>
+            <span class="team-detail-value">Thursday 7:00pm, [Venue TBC]</span>
+          </div>
+          <div class="team-detail">
+            <span class="team-detail-label">League:</span>
+            <span class="team-detail-value">Beds & Herts Girls League</span>
+          </div>
+          <div class="team-action">
+            <button class="btn btn-outline">View Team</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Philosophy -->
+  <section class="section philosophy">
+    <div class="philosophy-content">
+      <div class="philosophy-left">
+        <div class="philosophy-quote">We develop players, not just footballers.</div>
+        <div class="philosophy-text">
+          <p>At Linslade Galaxy Girls FC, we believe that youth football is about far more than just learning to kick a ball. Our FA-qualified coaches are committed to developing the whole player—building confidence, resilience, teamwork, and a lifelong love of the game.</p>
+          <p>Every girl who joins Galaxy has access to professional coaching with a long-term player development plan. From mini-football foundations to competitive league play, we create a pathway where every player can thrive at their level.</p>
+          <p>Our coaches put fun first. We know that girls who enjoy football stay in the sport, and that's why every training session is designed to be engaging, inclusive, and motivating.</p>
+        </div>
+      </div>
+      <div class="philosophy-right">
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Qualified Coaches</div>
+          <div class="stat-desc">All FA-trained and experienced in youth development</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">FA</div>
+          <div class="stat-label">Licensed</div>
+          <div class="stat-desc">Club and coaching licenses approved by The Football Association</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Volunteer-led</div>
+          <div class="stat-desc">Run by parents and coaches dedicated to girls' football</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section - No Team / Coach -->
+  <section class="section">
+    <div class="cta-section">
+      <div class="cta-card">
+        <h3>No Team for Your Age Group?</h3>
+        <p>We're always looking to expand Galaxy and create new teams. If there's no team for your daughter's age group right now, we may have a waiting list or be forming a new squad soon.</p>
+        <a href="contact.html">Get in touch with us →</a>
+      </div>
+      <div class="cta-card">
+        <h3>Are You a Coach?</h3>
+        <p>We're always looking for qualified and enthusiastic coaches to join our team. Whether you're FA-certified or just passionate about developing young girls in football, we want to hear from you.</p>
+        <a href="contact.html">Become a volunteer coach →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-banner-content">
+      <h2>Find the Right Team for Your Daughter</h2>
+      <p>Contact us today and we'll help you find the perfect team.</p>
+      <div class="cta-banner-buttons">
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        <a href="documents.html" class="btn btn-outline">View Documents</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer-stripe-bar"></div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-crest" style="width:52px;height:52px;font-size:22px;">⭐</div>
+        <h3>Linslade Galaxy Girls FC</h3>
+        <p>Inspiring girls through football in the Linslade community. Providing a safe, fun, and competitive environment for players of all abilities.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About the Club</a></li>
+          <li><a href="teams.html">Our Teams</a></li>
+          <li><a href="news.html">News & Updates</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="contact.html">Join the Club</a></li>
+          <li><a href="contact.html">Volunteer</a></li>
+          <li><a href="contact.html">Sponsorship</a></li>
+          <li><a href="documents.html">Safeguarding</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Linslade Galaxy Girls FC. All rights reserved.</p>
+      <p>Affiliated with the FA · Beds & Herts Football Association</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+    <div class="modal">
+      <div class="modal-header-stripe"></div>
+      <div class="modal-header-content">
+        <div class="modal-title">Member Login<span>Linslade Galaxy Girls FC</span></div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchTab('parent',this)">👨‍👩‍👧 Parent</button>
+        <button class="modal-tab" onclick="switchTab('admin',this)">⚙️ Admin</button>
+      </div>
+      <div class="modal-body">
+        <div id="parentForm">
+          <div class="form-group"><label>Email Address</label><input type="email" id="parentEmail" placeholder="your@email.com"/></div>
+          <div class="form-group"><label>Password</label><input type="password" id="parentPass" placeholder="Enter your password"/></div>
+          <button class="btn-submit" onclick="loginAs('parent')">Sign In as Parent</button>
+          <p class="modal-footer-note">Not registered? <a href="contact.html">Contact the club</a></p>
+        </div>
+        <div id="adminForm" style="display:none">
+          <div class="form-group"><label>Admin Username</label><input type="text" id="adminUser" placeholder="username"/></div>
+          <div class="form-group"><label>Password</label><input type="password" id="adminPass" placeholder="Enter admin password"/></div>
+          <button class="btn-submit" style="background:#111" onclick="loginAs('admin')">Sign In as Admin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let currentUser=null;
+    function openModal(t){document.getElementById('modalOverlay').classList.add('open');if(t==='admin')switchTab('admin',document.querySelectorAll('.modal-tab')[1]);document.body.style.overflow='hidden';}
+    function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
+    function closeModalOnBg(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    function switchTab(type,btn){document.getElementById('parentForm').style.display=type==='parent'?'block':'none';document.getElementById('adminForm').style.display=type==='admin'?'block':'none';document.querySelectorAll('.modal-tab').forEach(t=>t.classList.remove('active'));if(btn)btn.classList.add('active');}
+    function loginAs(role){if(role==='parent'){const e=document.getElementById('parentEmail').value.trim();if(!e){showToast('⚠️ Please enter your email');return;}const n=e.split('@')[0];currentUser={role:'parent',name:cap(n),initials:n[0].toUpperCase()};}else{const u=document.getElementById('adminUser').value.trim();if(!u){showToast('⚠️ Please enter your username');return;}currentUser={role:'admin',name:cap(u),initials:u[0].toUpperCase()};}closeModal();updateUI();showToast('✅ Signed in as '+currentUser.name);}
+    function logout(){currentUser=null;updateUI();showToast('👋 Signed out');}
+    function updateUI(){const lb=document.querySelector('.nav-actions .btn-login');const b=document.getElementById('userBadge');if(currentUser){if(lb)lb.style.display='none';b.style.display='flex';document.getElementById('userAvatar').textContent=currentUser.initials;document.getElementById('userGreeting').textContent=currentUser.name;}else{if(lb)lb.style.display='';b.style.display='none';}}
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+    function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200);}
+    function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+  </script>
+</body>
+</html>

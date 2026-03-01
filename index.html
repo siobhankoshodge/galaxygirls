@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linslade Galaxy Girls FC - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Design System */
+        :root {
+            --green-dark: #1a7a1a;
+            --green-light: #22a422;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --grey-light: #f5f5f5;
+            --grey-mid: #e0e0e0;
+            --grey-dark: #333333;
+            --text-dark: #2c2c2c;
+            --text-light: #666666;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: var(--text-dark);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--white);
+            border-bottom: 3px solid var(--green-dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-right: auto;
+        }
+
+        .nav-crest {
+            font-size: 32px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-light));
+            border-radius: 50%;
+            color: var(--white);
+        }
+
+        .nav-title {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .nav-title span {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--green-dark);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--green-dark);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-login {
+            background: var(--green-dark);
+            color: var(--white);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .btn-login:hover {
+            background: var(--green-light);
+        }
+
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--grey-light);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius);
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--green-dark);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .btn-logout {
+            background: transparent;
+            border: none;
+            color: var(--green-dark);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .btn-logout:hover {
+            color: var(--black);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: var(--white);
+            border-top: 1px solid var(--grey-mid);
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem 1.5rem;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, var(--green-dark) 25%, transparent 25%, transparent 75%, var(--green-dark) 75%, var(--green-dark)),
+                        linear-gradient(45deg, var(--green-dark) 25%, transparent 25%, transparent 75%, var(--green-dark) 75%, var(--green-dark));
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            background-color: var(--black);
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--green-light);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(34, 164, 34, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--green-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: linear-gradient(90deg, var(--green-dark) 0%, var(--black) 100%);
+            color: var(--white);
+            padding: 3rem 1.5rem;
+        }
+
+        .stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Section Container */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--green-dark);
+            border-radius: 2px;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .welcome-text h3 {
+            color: var(--green-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-light));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            position: relative;
+        }
+
+        .welcome-image::after {
+            content: 'Placeholder Image';
+            position: absolute;
+            font-size: 0.9rem;
+            bottom: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Why Join Cards */
+        .why-join-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 2px solid var(--grey-mid);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--green-dark);
+            box-shadow: 0 8px 24px rgba(26, 122, 26, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .news-image.match {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        }
+
+        .news-image.announcement {
+            background: linear-gradient(135deg, #4ecdc4, #6ee7de);
+        }
+
+        .news-image.club {
+            background: linear-gradient(135deg, var(--green-dark), var(--green-light));
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-badge {
+            display: inline-block;
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .news-card h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .news-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--green-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--green-light);
+        }
+
+        .news-footer {
+            text-align: center;
+        }
+
+        .btn-secondary {
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--green-light);
+        }
+
+        /* Fixtures Table */
+        .fixtures-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .fixtures-table thead {
+            background: var(--green-dark);
+            color: var(--white);
+        }
+
+        .fixtures-table th {
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .fixtures-table td {
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--grey-mid);
+        }
+
+        .fixtures-table tbody tr:nth-child(even) {
+            background: var(--grey-light);
+        }
+
+        .fixtures-table tbody tr:hover {
+            background: rgba(26, 122, 26, 0.05);
+        }
+
+        /* Join Banner */
+        .join-banner {
+            background: linear-gradient(45deg, var(--green-dark) 25%, transparent 25%, transparent 75%, var(--green-dark) 75%, var(--green-dark)),
+                        linear-gradient(45deg, var(--green-dark) 25%, transparent 25%, transparent 75%, var(--green-dark) 75%, var(--green-dark));
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .join-banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .join-banner h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .join-banner p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .join-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-join {
+            background: var(--white);
+            color: var(--green-dark);
+            padding: 0.8rem 2rem;
+            font-weight: 700;
+            border: none;
+        }
+
+        .btn-join:hover {
+            background: var(--grey-light);
+        }
+
+        /* Sponsors Section */
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .sponsor-box {
+            height: 150px;
+            background: var(--grey-light);
+            border: 2px dashed var(--grey-mid);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-light);
+            text-align: center;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-box:hover {
+            border-color: var(--green-dark);
+            background: rgba(26, 122, 26, 0.05);
+        }
+
+        /* Footer */
+        .footer-stripe-bar {
+            height: 8px;
+            background: linear-gradient(90deg, var(--green-dark) 25%, var(--black) 25%, var(--black) 50%, var(--green-dark) 50%, var(--green-dark) 75%, var(--black) 75%);
+        }
+
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 1.5rem 1.5rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--green-light);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header-stripe {
+            height: 6px;
+            background: linear-gradient(90deg, var(--green-dark) 50%, var(--black) 50%);
+        }
+
+        .modal-header-content {
+            background: var(--grey-light);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .modal-title span {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--green-dark);
+        }
+
+        .modal-tabs {
+            display: flex;
+            background: var(--grey-light);
+            border-bottom: 1px solid var(--grey-mid);
+        }
+
+        .modal-tab {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .modal-tab.active {
+            color: var(--green-dark);
+            border-bottom-color: var(--green-dark);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--grey-mid);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--green-dark);
+            box-shadow: 0 0 0 3px rgba(26, 122, 26, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--green-dark);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(--green-light);
+        }
+
+        .modal-footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+        }
+
+        .modal-footer-note a {
+            color: var(--green-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .modal-footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 2000;
+            transition: bottom 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .toast.show {
+            bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem !important;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-inner {
+                flex-wrap: nowrap;
+            }
+
+            .nav-brand {
+                margin-right: 0;
+            }
+
+            .nav-title {
+                font-size: 0.9rem;
+            }
+
+            .nav-actions {
+                order: 3;
+                width: 100%;
+            }
+
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .welcome {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .welcome-image {
+                height: 300px;
+                font-size: 80px;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .modal {
+                width: 95%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-title span {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .join-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .btn-join {
+                width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .join-banner h2 {
+                font-size: 1.8rem;
+            }
+
+            .user-badge {
+                gap: 0.3rem;
+            }
+
+            #userGreeting {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a class="nav-brand" href="index.html">
+                <div class="nav-crest">⭐</div>
+                <div class="nav-title">Linslade Galaxy Girls FC<span>Bedfordshire Girls Football</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="navActions">
+                <button class="btn-login" onclick="openModal()">🔐 Member Login</button>
+            </div>
+            <div id="userBadge" class="user-badge" style="display:none;">
+                <div class="avatar" id="userAvatar">P</div>
+                <span id="userGreeting">Parent</span>
+                <button class="btn-logout" onclick="logout()">Sign out</button>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" style="color:var(--green-light)">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="documents.html">Documents</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="btn-login" onclick="openModal()">🔐 Member Login</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Inspiring Girls Through Football</h1>
+            <p>Linslade Galaxy Girls FC — a welcoming, competitive and fun environment for girls of all abilities in the heart of Bedfordshire.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openModal()">Join the Club →</button>
+                <a href="teams.html" class="btn btn-outline">Meet Our Teams</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <div class="stat-icon">⚽</div>
+                <div class="stat-label">8+ Teams</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">👧</div>
+                <div class="stat-label">120+ Players</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">📅</div>
+                <div class="stat-label">Est. 2010</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-label">FA Affiliated</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <section>
+        <div class="welcome">
+            <div class="welcome-text">
+                <h3>Welcome to the Galaxy</h3>
+                <p>Linslade Galaxy Girls FC is a proud FA-affiliated girls football club based in Linslade, Bedfordshire. Since our founding in 2010, we've been dedicated to providing an inclusive, supportive, and competitive environment where girls can develop their football skills and build lasting friendships.</p>
+                <p>We welcome girls from U7 to U16 across our eight competitive teams. Whether your daughter is just starting her football journey or looking to compete at a higher level, Galaxy Girls has the perfect team for her. Our FA-qualified coaches are passionate about helping every player reach her full potential.</p>
+            </div>
+            <div class="welcome-image">⚽</div>
+        </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section>
+        <h2>Why Choose Galaxy Girls?</h2>
+        <div class="why-join-grid">
+            <div class="card">
+                <div class="card-icon">⚽</div>
+                <h4>Player Development</h4>
+                <p>FA-qualified coaches dedicated to helping every player reach their potential, from beginner to competitive level.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👧</div>
+                <h4>Girls-Only Environment</h4>
+                <p>A safe, supportive, and confidence-building space designed specifically for girls aged 5-16.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h4>Competitive & Fun</h4>
+                <p>We compete in local and regional leagues while keeping the focus firmly on enjoyment and teamwork.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section>
+        <h2>Latest News & Updates</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image match">⚽</div>
+                <div class="news-content">
+                    <span class="news-badge">Match Report</span>
+                    <div class="news-date">22 Feb 2026</div>
+                    <h4>Galaxy U12s Secure Top of the Table with 4-0 Win!</h4>
+                    <p class="news-excerpt">An outstanding performance saw our U12s team maintain their unbeaten run with a dominant display against local rivals. Read the full match report.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image announcement">📢</div>
+                <div class="news-content">
+                    <span class="news-badge" style="background:#4ecdc4">Announcement</span>
+                    <div class="news-date">15 Feb 2026</div>
+                    <h4>Spring Registration Now Open for 2025/26 Season</h4>
+                    <p class="news-excerpt">Registrations are now open for all age groups. Spaces are limited, so register your daughter today to secure her place in a Galaxy Girls team.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image club">📰</div>
+                <div class="news-content">
+                    <span class="news-badge" style="background:#22a422">Club News</span>
+                    <div class="news-date">8 Feb 2026</div>
+                    <h4>New Coaching Team Announced for U14s & U16s</h4>
+                    <p class="news-excerpt">We're delighted to announce the appointment of new coaches to lead our U14s and U16s teams. Meet the team on our Teams page.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+        </div>
+        <div class="news-footer">
+            <a href="news.html" class="btn btn-secondary">View All News →</a>
+        </div>
+    </section>
+
+    <!-- Upcoming Fixtures -->
+    <section>
+        <h2>Upcoming Fixtures</h2>
+        <table class="fixtures-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Home / Away</th>
+                    <th>Opposition</th>
+                    <th>Venue</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5 March 2026</td>
+                    <td>Home</td>
+                    <td>Leighton United U12s</td>
+                    <td>Linslade Recreation Ground</td>
+                    <td>19:00</td>
+                </tr>
+                <tr>
+                    <td>8 March 2026</td>
+                    <td>Away</td>
+                    <td>Dunstable Town U14s</td>
+                    <td>Dunstable Sports Centre</td>
+                    <td>18:30</td>
+                </tr>
+                <tr>
+                    <td>12 March 2026</td>
+                    <td>Home</td>
+                    <td>Houghton Conquest U10s</td>
+                    <td>Linslade Recreation Ground</td>
+                    <td>18:00</td>
+                </tr>
+                <tr>
+                    <td>15 March 2026</td>
+                    <td>Away</td>
+                    <td>Milton Keynes Youth U16s</td>
+                    <td>Campbell Park</td>
+                    <td>19:30</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Join Us Banner -->
+    <section class="join-banner">
+        <div class="join-banner-content">
+            <h2>Ready to Join the Galaxy?</h2>
+            <p>Get your daughter involved in a welcoming, professional, and fun girls' football club today.</p>
+            <div class="join-buttons">
+                <button class="btn btn-join" onclick="openModal()">Register Now</button>
+                <a href="contact.html" class="btn btn-join" style="background:#22a422;color:white;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section>
+        <h2>Our Supporters</h2>
+        <p style="text-align:center;margin-bottom:2rem;">Proud to be supported by our sponsors.</p>
+        <div class="sponsors-grid">
+            <div class="sponsor-box">Sponsor Name</div>
+            <div class="sponsor-box">Sponsor Name</div>
+            <div class="sponsor-box">Sponsor Name</div>
+            <div class="sponsor-box">Sponsor Name</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer-stripe-bar"></div>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-crest" style="width:52px;height:52px;font-size:22px;">⭐</div>
+                <h3>Linslade Galaxy Girls FC</h3>
+                <p>Inspiring girls through football in the Linslade community. Providing a safe, fun, and competitive environment for players of all abilities.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About the Club</a></li>
+                    <li><a href="teams.html">Our Teams</a></li>
+                    <li><a href="news.html">News & Updates</a></li>
+                    <li><a href="documents.html">Documents</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="contact.html">Join the Club</a></li>
+                    <li><a href="contact.html">Volunteer</a></li>
+                    <li><a href="contact.html">Sponsorship</a></li>
+                    <li><a href="documents.html">Safeguarding</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Linslade Galaxy Girls FC. All rights reserved.</p>
+            <p>Affiliated with the FA · Beds & Herts Football Association</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+        <div class="modal">
+            <div class="modal-header-stripe"></div>
+            <div class="modal-header-content">
+                <div class="modal-title">Member Login<span>Linslade Galaxy Girls FC</span></div>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-tabs">
+                <button class="modal-tab active" onclick="switchTab('parent',this)">👨‍👩‍👧 Parent</button>
+                <button class="modal-tab" onclick="switchTab('admin',this)">⚙️ Admin</button>
+            </div>
+            <div class="modal-body">
+                <div id="parentForm">
+                    <div class="form-group"><label>Email Address</label><input type="email" id="parentEmail" placeholder="your@email.com"/></div>
+                    <div class="form-group"><label>Password</label><input type="password" id="parentPass" placeholder="Enter your password"/></div>
+                    <button class="btn-submit" onclick="loginAs('parent')">Sign In as Parent</button>
+                    <p class="modal-footer-note">Not registered? <a href="contact.html">Contact the club</a> to get access.</p>
+                </div>
+                <div id="adminForm" style="display:none">
+                    <div class="form-group"><label>Admin Username</label><input type="text" id="adminUser" placeholder="username"/></div>
+                    <div class="form-group"><label>Password</label><input type="password" id="adminPass" placeholder="Enter admin password"/></div>
+                    <button class="btn-submit" style="background:#111" onclick="loginAs('admin')">Sign In as Admin</button>
+                    <p class="modal-footer-note">Club admins only. <a href="contact.html">Need access?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <!-- JavaScript -->
+    <script>
+        let currentUser = null;
+
+        function openModal(t) {
+            document.getElementById('modalOverlay').classList.add('open');
+            if (t === 'admin') switchTab('admin', document.querySelectorAll('.modal-tab')[1]);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnBg(e) {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function switchTab(type, btn) {
+            document.getElementById('parentForm').style.display = type === 'parent' ? 'block' : 'none';
+            document.getElementById('adminForm').style.display = type === 'admin' ? 'block' : 'none';
+            document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+
+        function loginAs(role) {
+            if (role === 'parent') {
+                const e = document.getElementById('parentEmail').value.trim();
+                if (!e) {
+                    showToast('Please enter your email');
+                    return;
+                }
+                const n = e.split('@')[0];
+                currentUser = {
+                    role: 'parent',
+                    name: cap(n),
+                    initials: n[0].toUpperCase()
+                };
+            } else {
+                const u = document.getElementById('adminUser').value.trim();
+                if (!u) {
+                    showToast('Please enter your username');
+                    return;
+                }
+                currentUser = {
+                    role: 'admin',
+                    name: cap(u),
+                    initials: u[0].toUpperCase()
+                };
+            }
+            closeModal();
+            updateUI();
+            showToast('Signed in as ' + currentUser.name);
+        }
+
+        function logout() {
+            currentUser = null;
+            updateUI();
+            showToast('Signed out');
+        }
+
+        function updateUI() {
+            const lb = document.querySelector('.nav-actions .btn-login');
+            const b = document.getElementById('userBadge');
+            if (currentUser) {
+                if (lb) lb.style.display = 'none';
+                b.style.display = 'flex';
+                document.getElementById('userAvatar').textContent = currentUser.initials;
+                document.getElementById('userGreeting').textContent = currentUser.name;
+            } else {
+                if (lb) lb.style.display = '';
+                b.style.display = 'none';
+            }
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3200);
+        }
+
+        function cap(s) {
+            return s.charAt(0).toUpperCase() + s.slice(1);
+        }
+    </script>
+</body>
+</html>
